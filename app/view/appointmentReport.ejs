@@ -1,0 +1,95 @@
+<html>
+
+<head>
+
+    <style>
+        html {
+            margin: 40px 50px
+        }
+
+        th,
+
+        li {
+            font-size: 0.6rem;
+        }
+
+        .table-padding {
+            padding-left: 5px;
+            padding-right: 6px;
+            width: 100px
+        }
+    </style>
+</head>
+
+<body>
+    <!-- page 1 -->
+
+    <div>
+        <div style="height: 7.2in">
+            <div></div>
+            <div>
+                <table border="2" style="font-size: 10px;border-collapse: collapse;text-align: center">
+                    <tr>
+                        <th class="table-padding">S.no</th>
+                        <th class="table-padding">Country</th>
+                        <th class="table-padding">City</th>
+                        <th class="table-padding">Medical Center</th>
+                        <th class="table-padding">Visa Refrence No</th>
+                        <th class="table-padding">Passport Number</th>
+                        <th class="table-padding">Date of Birth</th>
+                    </tr>
+
+                    <% for(let j=0; j<=data.length-1;j++) { %>
+                    <tr>
+                        <td class="table-padding"><%= j+1 %></td>
+                        <td class="table-padding"><%= data[j]['country'] %></td>
+                        <td class="table-padding"><%= data[j]['city'] %></td>
+                        <td class="table-padding"><%= data[j]['medicalCenter'] %></td>
+                        <td class="table-padding"><%= data[j]['visaRefNumber'] %></td>
+                        <td class="table-padding"><%= data[j]['passportNumber'] %></td>
+                        <td class="table-padding"><%= data[j]['dob'] %></td>
+                    </tr>
+                    <% } %>
+
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+    <% for(let page =2 ; page<= pageCount ;page++){ %>
+    <div>
+        <div style="height: 7.2in">
+            <div></div>
+            <div>
+                <table border="2" style="font-size: 10px;border-collapse: collapse;text-align: center">
+                    <tr>
+                        <th class="table-padding">S.no</th>
+                        <th class="table-padding">Country</th>
+                        <th class="table-padding">City</th>
+                        <th class="table-padding">Medical Center</th>
+                        <th class="table-padding">Visa Refrence No</th>
+                        <th class="table-padding">Passport Number</th>
+                        <th class="table-padding">Date of Birth</th>
+                    </tr>
+
+                    <% for(let j =((page-1)*67); j<= ((data.length>(page*67))?(page*67):data.length-1);j++) { %>
+                    <tr>
+                        <td class="table-padding"><%= j+1 %></td>
+                        <td class="table-padding"><%= data[j]['country'] %></td>
+                        <td class="table-padding"><%= data[j]['city'] %></td>
+                        <td class="table-padding"><%= data[j]['medicalCenter'] %></td>
+                        <td class="table-padding"><%= data[j]['visaRefNumber'] %></td>
+                        <td class="table-padding"><%= data[j]['passportNumber'] %></td>
+                        <td class="table-padding"><%= data[j]['dob'] %></td>
+                    </tr>
+                    <% } %>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <% } %>
+</body>
+
+</html>

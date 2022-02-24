@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  token_management_backend:
+    build: .
+    ports:
+      - 8080:8080
+    environment:
+      NODE_ENV: dev
+      PORT: 8080
+      MONGODB_CONNECTION_STRING: mongodb://localhost:27017/db
